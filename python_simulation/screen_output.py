@@ -132,12 +132,12 @@ def module2_display(array, atkmode, bullet_pos, hp1, hp2):
             tmp_array[y][x] = '%'
             if bullet_pos[0][0] > 16:
                tmp_array[y-1][x] = '%'
-               tmp_array[y][x-1] = '%'
-               tmp_array[y-1][x-1] = '%'
+               tmp_array[y][max(x-1,0)] = '%'
+               tmp_array[y-1][max(x-1,0)] = '%'
             else:
                tmp_array[y-1][x] = '%'
-               tmp_array[y][x+1] = '%'
-               tmp_array[y-1][x+1] = '%'
+               tmp_array[y][min(x+1,31)] = '%'
+               tmp_array[y-1][min(x+1,31)] = '%'
 
             print_array(tmp_array)
             time.sleep(0.5)
